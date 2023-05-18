@@ -6,3 +6,5 @@
 node_modules
 */node_modules
 modelh
+
+.DS_Store
