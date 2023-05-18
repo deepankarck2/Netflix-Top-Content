@@ -1,0 +1,8 @@
+# .env
+.env
+*/.env
+
+# packages
+node_modules
+*/node_modules
+modelh
