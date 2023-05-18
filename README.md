@@ -24,9 +24,9 @@ This application is composed of three main technologies:
 
 ### Install Dependencies Automatically
 1. Set your terminal to Bash
-2. Give execute permission to `inp.sh`
+2. Give execute permission to `install_dependencies.sh`
 ```bash
-chmod +x inp.sh
+chmod +x install_dependencies.sh
 ```
 3. Run the script
 ```bash
