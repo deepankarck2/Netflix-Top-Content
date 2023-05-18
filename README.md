@@ -1,6 +1,24 @@
-## Netflix Trending 
+# Netflix Top 10 Movies and TV Shows Tracker
 
-## Installation
+This project aims to provide a user-friendly platform that allows users to explore the top 10 Netflix movies and TV shows. The data presented in this platform is obtained through **web scraping, ensuring that the top picks are always up to date.** This project is built using a powerful combination of Express, Sequelize (MySQL), and React.
+
+## Features
+* **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
+
+* **Interactive Details:** We strive to provide our users with more than just a list. By clicking on a specific movie or TV show, users are directed to a new page that presents detailed information about that selection. Details include the movie's title, cast, director, duration, ratings, and a brief overview of the plot, providing a comprehensive understanding of the content.
+
+By utilizing this project, users can stay updated on the most popular Netflix content and make informed decisions on what to watch next, making their Netflix experience even better!
+
+## Technical Details
+This application is composed of three main technologies:
+
+* **Express.js** for backend logic, handling routing, server setup, and database operations.
+* **Sequelize (with MySQL)** for the database layer, managing the data related to the top 10 lists.
+* **React** for building the frontend of the application, providing interactive and dynamic user interfaces.
+
+<hr> 
+
+## Installation Instruction: 
 1. Install git
 2. Install NodeJS
 
