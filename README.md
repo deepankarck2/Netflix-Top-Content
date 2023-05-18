@@ -18,7 +18,7 @@ chmod +x inp.sh
 # OR
 
 # This
-bash inp.sh
+bash install_dependencies.sh
 ```
 
 ## Set up Environment Variables: 
