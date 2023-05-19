@@ -17,7 +17,7 @@ function Top10MoviesPage() {
             <hr></hr>
             {movies.map(movie => (
                 <div key={movie.index}>
-                    <h2> Ranking: {movie.index}, Name: {movie.Movie}</h2>
+                    <h2> Ranking: {movie.index + 1}, Name: {movie.Movie}</h2>
                     <Link to={`/movie/${movie.index}`}>View Details</Link>
                 </div>
             ))}
