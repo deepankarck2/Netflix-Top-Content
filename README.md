@@ -44,7 +44,7 @@ bash install_dependencies.sh
 ```bash
 touch .env
 ```
-2. Follow the instruction below to configure the environment file. Add all the .env variables condentially shared with you.
+2. Follow the instruction below to configure the environment file. Add all the .env variables that has been confidentiality shared.
 ```
 # database
 MYSQL_HOST=
