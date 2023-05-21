@@ -18,3 +18,17 @@ export function getMovieDetails(id) {
         console.log(err); 
    })
 }
+
+export function getTop10TvShows() {
+   return axios.get(`${BASE_URL}/top10tvshows`)
+   .catch((err) =>{
+      console.log(err);
+   })
+}
+
+export function getTvShowDetails(id) {
+   return axios.get(`${BASE_URL}/tvshow/${id}`)
+  .catch( (err) => {
+       console.log(err); 
+  })
+}
