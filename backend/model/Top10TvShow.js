@@ -1,15 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const DB = require('../database/initDatabase');
 
-class Top10Movie extends Model {}
 
-Top10Movie.init({
+class Top10TvShow extends Model {} 
+
+Top10TvShow.init({
     index: {
         type: DataTypes.BIGINT,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true,
       },
-      Movie: {
+      TV: {
         type: DataTypes.TEXT,
         allowNull: true
       },
@@ -21,11 +22,12 @@ Top10Movie.init({
         type: DataTypes.TEXT,
         allowNull: true
       }
-    }, {
-    sequelize: DB,
-    modelName: "netflixTopMovie10",
-    tableName: "netflixTopMovie10",
-    timestamps: false,
-});
+    },{
+        sequelize: DB,
+        tableName: 'netflixTopTv10',
+        modelName: 'netflixTopTv10',
+        timestamps: false
+    }
+)
 
-module.exports = Top10Movie;
+module.exports = Top10TvShow;

@@ -4,6 +4,7 @@ const routes = require("./router")
 
 const express = require('express');
 const cors = require('cors');
+const DB = require('./database/initDatabase');
 
 
 const app = express();
@@ -17,9 +18,14 @@ app.use('/', routes);
 
 async function startServer(){
     try{
-    app.listen(PORT, () => console.log(`Backend is listening on port ${PORT}`)); 
+        // Test the connection to the database
+        await DB.authenticate();
+        console.log('Database connection has been established successfully.');
+        
+        // If the connection is successful, then start the server
+        app.listen(PORT, () => console.log(`Backend is listening on port ${PORT}`)); 
     } catch(err){
-        console.log(err); 
+        console.log('Unable to connect to the database:', err); 
     }
 }
 

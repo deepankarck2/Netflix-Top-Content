@@ -4,9 +4,6 @@ const Demo = require('./model/demo');
 const controllers = require("./controllers")
 
 
-const Top10Movie = require('./model/Top10Movie')
-const MovieDetails = require('./model/MovieDetails')
-
 router.get('/', (req,res) => res.json({"status" : "Netflix server ok"}));
 
 router.get('/users', async(req, res) => {
@@ -16,6 +13,10 @@ router.get('/users', async(req, res) => {
 
 // Movie Routes 
 router.get('/top10movies', controllers.fetchtop10MovieController);
-router.get('/movie/:id', controllers.fetchMovieDetailsController)
+router.get('/movie/:id', controllers.fetchMovieDetailsController); 
+
+// TV Show Soutes
+
+router.get('/top10tvshow', controllers.fetchTop10TvShowController);
 
 module.exports = router; 
