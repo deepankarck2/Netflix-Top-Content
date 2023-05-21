@@ -20,6 +20,14 @@ TvShowDetails.init({
         summary: {
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        genres: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
+        imgUrl: {
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     },{
         sequelize: DB,
