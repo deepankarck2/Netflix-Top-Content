@@ -66,9 +66,11 @@ BACKEND_HOST=
 cd backend
 npm start
 ```
+Note: backend runs on localhost:4000
 
 2. Run Frontend:
 ```
 cd frontend
 npm start
 ```
+Note: backend runs on localhost:4000
