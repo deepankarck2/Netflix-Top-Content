@@ -23,6 +23,7 @@ function MovieDetailsPage() {
                 <h1>Title: {movie.Movie}</h1>
                 <p>Summary: {movie.summary}</p>
                 <p>Rating: {movie.rating}</p>
+                <p>Genres: {movie.genres}</p>
                 <img src={movie.imgUrl} alt={movie.name} />
             </div>
         </div>
