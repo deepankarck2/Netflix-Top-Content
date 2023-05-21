@@ -3,6 +3,7 @@ import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from sqlalchemy import create_engine
+from credentials import MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_PORT, MYSQL_DATABASE
 import time
 
 
@@ -10,7 +11,9 @@ url = 'https://www.imdb.com/'
 path = "chromedriver.exe"
 driver = webdriver.Chrome(path) 
 #change Password to actual password. same with endpoint
-engine = create_engine("mysql://admin:Password@endpoint:3306/netflix")
+db_link = f"mysql://admin:{MYSQL_PASSWORD}@{MYSQL_HOST}:3306/netflix" 
+
+engine = create_engine(db_link)
 test = pd.read_sql_query('select Movie from netflixTopMovie10',engine)
 movies = test['Movie'].to_list()
 nump = np.array([])
@@ -67,7 +70,9 @@ df['rating'] = pd.to_numeric(df['rating'])
 
 print(df)
 df.index.names = ['rank']
-df.to_sql('imdbMovie', con=engine, if_exists='replace')
-engine.execute('alter table imdbMovie add id int primary key auto_increment')
+print(df)
+
+# df.to_sql('imdbMovie', con=engine, if_exists='replace')
+# engine.execute('alter table imdbMovie add id int primary key auto_increment')
 
 driver.quit()
