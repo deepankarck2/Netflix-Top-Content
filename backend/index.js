@@ -9,7 +9,7 @@ const DB = require('./database/initDatabase');
 
 const app = express();
 
-const PORT = process.env.BACKEND_PORT 
+const PORT =  process.env.PORT || process.env.BACKEND_PORT 
 
 app.use(express.json());
 app.use(cors());
