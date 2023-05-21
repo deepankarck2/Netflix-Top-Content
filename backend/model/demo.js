@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/initDatabase');
+const DB = require('../database/initDatabase');
 
 class Demo extends Model {}
 
@@ -16,7 +16,7 @@ Demo.init(
     }
   },
   {
-    sequelize,
+    sequelize: DB,
     modelName: 'demo',
     tableName: 'demo', // Specify the desired table name here,
     timestamps: false, 

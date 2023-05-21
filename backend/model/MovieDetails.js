@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/initDatabase');
+const DB = require('../database/initDatabase');
 
 const { timeStamp } = require('console');
 
@@ -32,7 +32,7 @@ MovieDetails.init({
         allowNull: true
       }
     }, {
-    sequelize,
+    sequelize: DB,
     modelName: "imdbMovie",
     tableName: "imdbMovie",
     timestamps: false,

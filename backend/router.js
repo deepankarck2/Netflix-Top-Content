@@ -1,24 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const Demo = require('./model/demo');
-const Top10Movie = require('./model/Top10Movie')
-const MovieDetails = require('./model/MovieDetails')
+const controllers = require("./controllers")
 
-router.get('/', (req,res) => res.json({"status" : "Netflix server ok"}));
+
+router.get('/', (req,res) => res.json({"status" : "Backend server is ok"}));
+
 router.get('/users', async(req, res) => {
     const Allusers = await Demo.findAll();
     res.json(Allusers);
 })
 
-router.get('/top10movies', async (req,res) => {
-    const allMovies = await Top10Movie.findAll();
-    res.json(allMovies);
-})
+// Movie Routes 
+router.get('/top10movies', controllers.fetchtop10MovieController);
+router.get('/movie/:id', controllers.fetchMovieDetailsController); 
 
-router.get('/movie/:id', async(req, res) =>{
-    const id = req.params.id;
-    const movie = await MovieDetails.findOne({ where: { index: id }});
-    res.json(movie);
-})
+// TV Show Soutes
+router.get('/top10tvshows', controllers.fetchTop10TvShowController);
+router.get('/tvshow/:id', controllers.fetchTvShowDetailsController);
 
-module.exports = router
+
+module.exports = router; 
