@@ -1,0 +1,11 @@
+/* styles.css */
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+.nav-list li {
+    display: inline-block;
+    margin-right: 10px;
+}
+  
