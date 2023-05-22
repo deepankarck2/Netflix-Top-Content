@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const DB = require('../database/initDatabase');
+const Top10TvShow = require('./Top10TvShow')
 
 class TvShowDetails extends Model {}
 
@@ -37,7 +38,16 @@ TvShowDetails.init({
         imdb_id: {
             type: DataTypes.TEXT,
             allowNull: true
-        }
+        },
+        fk_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              // This is a reference to another model
+              model: Top10TvShow,
+              // This is the column name of the referenced model
+              key: 'id',
+            }
+          }
     },{
         sequelize: DB,
         modelName: "imdbTV",
@@ -45,5 +55,15 @@ TvShowDetails.init({
         timestamps: false,
     }
 )
+
+TvShowDetails.belongsTo(Top10TvShow, {
+    foreignKey: 'fk_id',
+    as: 'top10tvshow'
+  });
+  
+Top10TvShow.hasOne(TvShowDetails, {
+    foreignKey: 'fk_id',
+    as: 'tvshowdetails'
+});
 
 module.exports = TvShowDetails;
