@@ -6,10 +6,15 @@ const { timeStamp } = require('console');
 class MovieDetails extends Model {}
 
 MovieDetails.init({
-    index: {
-        type: DataTypes.BIGINT,
+      id:{
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true,
+      },
+      rank: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
       },
       Movie: {
         type: DataTypes.TEXT,
@@ -28,6 +33,10 @@ MovieDetails.init({
         allowNull: true
       },
       imgUrl: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      imdb_id: {
         type: DataTypes.TEXT,
         allowNull: true
       }

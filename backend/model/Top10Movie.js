@@ -4,10 +4,15 @@ const DB = require('../database/initDatabase');
 class Top10Movie extends Model {}
 
 Top10Movie.init({
-    index: {
-        type: DataTypes.BIGINT,
+      id:{
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true,
+      },
+      rank: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
       },
       Movie: {
         type: DataTypes.TEXT,

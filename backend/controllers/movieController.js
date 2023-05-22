@@ -8,7 +8,7 @@ async function fetchtop10MovieController(req,res){
 
 async function fetchMovieDetailsController(req, res){
     const id = req.params.id;
-    const movie = await MovieDetails.findOne({ where: { index: id }});
+    const movie = await MovieDetails.findOne({ where: { id: id }});
     res.json(movie);
 }
 
