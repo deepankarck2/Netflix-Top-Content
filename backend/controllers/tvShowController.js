@@ -8,7 +8,7 @@ async function fetchTop10TvShowController(req, res){
 
 async function fetchTvShowDetailsController(req, res){
     const id = req.params.id;
-    const tvShowDetails = await TvShowDetails.findOne({ where: { index: id }});
+    const tvShowDetails = await TvShowDetails.findOne({ where: { id: id }});
 
     res.json(tvShowDetails);
 }

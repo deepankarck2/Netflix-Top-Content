@@ -5,10 +5,15 @@ const DB = require('../database/initDatabase');
 class Top10TvShow extends Model {} 
 
 Top10TvShow.init({
-    index: {
+    id:{
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
+    rank: {
         type: DataTypes.BIGINT,
         allowNull: true,
-        primaryKey: true,
       },
       TV: {
         type: DataTypes.TEXT,

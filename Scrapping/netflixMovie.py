@@ -45,7 +45,6 @@ df.to_sql('netflixTopMovie10', con=engine, if_exists='replace')
 
 
 metadata = MetaData()
-
 with engine.connect() as connection:
     netflixTopMovie10 = Table('netflixTopMovie10', metadata, autoload_with=engine)
     query = DDL('ALTER TABLE netflixTopMovie10 ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY')
