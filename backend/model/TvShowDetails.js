@@ -4,10 +4,15 @@ const DB = require('../database/initDatabase');
 class TvShowDetails extends Model {}
 
 TvShowDetails.init({
-        index: {
-        type: DataTypes.BIGINT,
-        allowNull: true,
-        primaryKey: true,
+        id:{
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            allowNull: false,
+            primaryKey: true,
+        },
+        rank: {
+            type: DataTypes.BIGINT,
+            allowNull: true,
         },
         TV: {
             type: DataTypes.TEXT,
@@ -26,6 +31,10 @@ TvShowDetails.init({
             allowNull: true
         },
         imgUrl: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
+        imdb_id: {
             type: DataTypes.TEXT,
             allowNull: true
         }

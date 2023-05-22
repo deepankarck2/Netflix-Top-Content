@@ -7,4 +7,9 @@ node_modules
 */node_modules
 modelh
 
+credentials.py
+__pycache__
+*/__pycache__
+**/__pycache__
+
 .DS_Store
