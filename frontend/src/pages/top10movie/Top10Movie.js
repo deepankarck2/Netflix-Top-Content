@@ -23,7 +23,7 @@ function Top10MoviesPage() {
             <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
             <div class="flex flex-row flex-wrap	box-border m-5 justify-center">
             {movies.map(movie => (
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4" key={movie.index} >
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4" key={movie.id} >
                         <a href={`/movie/${movie.id}`}>
                             <img class="rounded-t-lg" src="https://todaysparent.mblycdn.com/uploads/tp/2018/04/best-kids-movies-us-netflix-sing.jpg" alt="" />
                         </a>
