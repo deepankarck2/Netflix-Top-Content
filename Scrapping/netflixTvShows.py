@@ -3,6 +3,8 @@ import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from sqlalchemy import create_engine
+from credentials import MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_PORT, MYSQL_DATABASE
+from sqlalchemy import MetaData, Table, DDL
 
 url = 'https://top10.netflix.com/tv'
 path = "chromedriver.exe"
@@ -31,7 +33,18 @@ df = pd.DataFrame(nump,columns = ['TV','weeksTop10','hoursViewed'])
 df = df.astype({"TV":'category', "weeksTop10":'int64','hoursViewed':'object'})
 print(df.dtypes)
 df.index.names = ['rank']
+df.index = df.index + 1
+
 #change password to actual password. same with endpoint
-engine = create_engine("mysql://admin:Password@endpoint:3306/netflix")
+#engine = create_engine("mysql://admin:Password@endpoint:3306/netflix")
+db_link = f"mysql://admin:{MYSQL_PASSWORD}@{MYSQL_HOST}:3306/netflix" 
+engine = create_engine(db_link)
+
 df.to_sql('netflixTopTv10', con=engine, if_exists='replace')
-engine.execute('alter table netflixTopTv10 add id int primary key auto_increment')
+
+metadata = MetaData()
+
+with engine.connect() as connection:
+    netflixTopMovie10 = Table('netflixTopMovie10', metadata, autoload_with=engine)
+    query = DDL('ALTER TABLE netflixTopTv10 ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY')
+    connection.execute(query)
