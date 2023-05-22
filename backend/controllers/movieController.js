@@ -2,7 +2,13 @@ const Top10Movie = require('../model/Top10Movie')
 const MovieDetails = require('../model/MovieDetails')
 
 async function fetchtop10MovieController(req,res){
-    const allMovies = await Top10Movie.findAll();
+    const allMovies = await Top10Movie.findAll({
+        include: [{
+            model: MovieDetails,
+            as: 'moviedetails', // using the alias defined in the association
+            required: true,
+        }]
+    });
     res.json(allMovies);
 }
 
