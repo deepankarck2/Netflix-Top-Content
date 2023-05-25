@@ -5,7 +5,7 @@ env:
   MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
   MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
   MYSQL_DIALECT: ${{ secrets.MYSQL_DIALECT }}
-  
+  BACKEND_PORT: ${{ secrets.BACKEND_PORT}}
 on:
   push:
     branches: [ main ]
