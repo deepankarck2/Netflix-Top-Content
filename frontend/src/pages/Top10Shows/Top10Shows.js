@@ -23,8 +23,8 @@ function Top10TvShowsPage() {
             <hr></hr>
             {shows.map(show => (
                 <div key={show.index}>
-                    <h2> Ranking: {show.index + 1}, Name: {show.TV}</h2>
-                    <Link to={`/tvshow/${show.index}`}>View Details</Link>
+                    <h2> Ranking: {show.rank}, Name: {show.TV}</h2>
+                    <Link to={`/tvshow/${show.id}`}>View Details</Link>
                 </div>
             ))}
         </div>
