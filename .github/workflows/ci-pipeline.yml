@@ -1,11 +1,16 @@
 name: Node.js CI
-
+env: 
+  MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+  MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
+  MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+  MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+  MYSQL_DIALECT: ${{ secrets.MYSQL_DIALECT }}
+  
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,9 +37,4 @@ jobs:
       run: |
         cd backend
         npm test
-      env: 
-        MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
-        MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
-        MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
-        MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
-        MYSQL_DIALECT: ${{ secrets.MYSQL_DIALECT }}
+
