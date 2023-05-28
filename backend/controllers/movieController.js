@@ -1,5 +1,6 @@
 const Top10Movie = require('../model/Top10Movie')
 const MovieDetails = require('../model/MovieDetails')
+const RottenTomatosMovie = require('../model/RottenTomatosMovie')
 
 async function fetchtop10MovieController(req,res){
     const allMovies = await Top10Movie.findAll({
@@ -14,8 +15,19 @@ async function fetchtop10MovieController(req,res){
 
 async function fetchMovieDetailsController(req, res){
     const id = req.params.id;
-    const movie = await MovieDetails.findOne({ where: { id: id }});
-    res.json(movie);
+    const movieDetails = await MovieDetails.findOne({ where: { id: id }});
+
+    //rename rating to imdb_rating and delete rating
+    movieDetails.dataValues.imdb_rating = movieDetails.dataValues.rating;
+    delete movieDetails.dataValues.rating;
+    const rottenTomatosMovieDetails = await RottenTomatosMovie.findOne({ where: { fk_id: id }});
+
+    const combinedDetails = {
+        ...movieDetails.dataValues,
+        ...rottenTomatosMovieDetails.dataValues
+    }
+    console.log(combinedDetails)
+    res.json(combinedDetails);
 }
 
 
