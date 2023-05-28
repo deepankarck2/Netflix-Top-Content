@@ -38,7 +38,8 @@ function TvShowDetailsPage() {
             <div>
                 <h1>Title: {show.TV} </h1>
                 <p>Summary: {show.summary} </p>
-                <p>Rating: {show.rating} </p>
+                <p>IMDB Rating: {show.imdb_rating} </p>
+                <p>Rotten Tomatoes Rating: {show.tomatometer || show.audience_score || 'Unavailable'}</p>
                 <p>Genres: {show.genres} </p>
                 <br/>
 

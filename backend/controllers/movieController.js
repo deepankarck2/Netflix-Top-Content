@@ -16,7 +16,8 @@ async function fetchtop10MovieController(req,res){
 async function fetchMovieDetailsController(req, res){
     const id = req.params.id;
     const movieDetails = await MovieDetails.findOne({ where: { id: id }});
-
+    // print type of movieDetails
+    console.log("TYPE:",  typeof movieDetails);
     //rename rating to imdb_rating and delete rating
     movieDetails.dataValues.imdb_rating = movieDetails.dataValues.rating;
     delete movieDetails.dataValues.rating;

@@ -30,7 +30,8 @@ function MovieDetailsPage() {
                     <div className="p-4 bg-gray-800 rounded shadow-lg">
                         <p className="text-lg">Summary: {movie.summary}</p>
                     </div>
-                    <p className="text-lg">Rating: {movie.rating}</p>
+                    <p className="text-lg">Imdb Rating: {movie.imdb_rating}</p>
+                    <p className="text-lg">Rotten Tomatoes Rating: {movie.tomatometer || movie.audience_score || 'Unavailable'}</p>
                     <p className="text-lg">Genres: {movie.genres}</p>
                 </div>
                 </div>
