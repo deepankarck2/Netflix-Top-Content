@@ -11,7 +11,6 @@ function TvShowDetailsPage() {
     useEffect(() => {
         getTvShowDetails(id)
           .then(response => {
-            console.log(response);
             setshow(response);
           })
           .catch(error => {
@@ -48,9 +47,9 @@ function TvShowDetailsPage() {
                 <p>Type of Viewer: {show.typeOfViewer} </p>
                 <p>Similar Shows: 
                     {similarShows.map(similar_show => 
-                    <li>
+                    <a href={'https://www.google.com/search?q=' + similar_show} target="_blank"><li>
                         {similar_show}
-                    </li>)}
+                    </li></a>)}
                 </p>
                 <img src={show.imgUrl} alt={show.TV} />
             </div>
