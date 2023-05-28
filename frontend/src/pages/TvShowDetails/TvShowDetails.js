@@ -47,7 +47,7 @@ function TvShowDetailsPage() {
                 <p>Type of Viewer: {show.typeOfViewer} </p>
                 <p>Similar Shows: 
                     {similarShows.map(similar_show => 
-                    <a href={'https://www.google.com/search?q=' + similar_show} target="_blank"><li>
+                    <a href={'https://www.google.com/search?q=' + similar_show} target="_blank" rel="noreferrer"><li>
                         {similar_show}
                     </li></a>)}
                 </p>
