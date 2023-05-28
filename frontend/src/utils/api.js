@@ -27,8 +27,24 @@ export function getTop10TvShows() {
 }
 
 export function getTvShowDetails(id) {
-   return axios.get(`${BASE_URL}/tvshow/${id}`)
-  .catch( (err) => {
-       console.log(err); 
-  })
-}
+   const tvShowPromise = axios.get(`${BASE_URL}/tvshow/${id}`);
+   const gptDetailsPromise = axios.get(`${BASE_URL}/gpttv/${id}`);
+   
+   return Promise.all([tvShowPromise, gptDetailsPromise])
+     .then(([tvShowResponse, gptDetailsResponse]) => {
+       const tvShowData = tvShowResponse.data;
+       const gptDetailsData = gptDetailsResponse.data;
+       
+       // Combine the data from both responses
+       const combinedData = {
+         ...tvShowData,
+         ...gptDetailsData
+       };
+       
+       return combinedData;
+     })
+     .catch((err) => {
+       console.log(err);
+     });
+ }
+ 

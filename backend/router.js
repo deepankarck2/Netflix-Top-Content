@@ -19,5 +19,7 @@ router.get('/movie/:id', controllers.fetchMovieDetailsController);
 router.get('/top10tvshows', controllers.fetchTop10TvShowController);
 router.get('/tvshow/:id', controllers.fetchTvShowDetailsController);
 
+router.get('/gpttv/:id', controllers.fetchTvGptController);
+
 
 module.exports = router; 
