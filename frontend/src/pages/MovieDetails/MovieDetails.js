@@ -6,7 +6,7 @@ import Footer from '../../components/Header/Footer';
 function MovieDetailsPage() {
     const [movie, setMovie] = useState(null);
     const { id } = useParams();
-    const [similarmovies, setSimilarShows] = useState([]);
+    const [similarmovies, setsimilarmovies] = useState([]);
 
     useEffect(() => {
         getMovieDetails(id).then(response => {
@@ -23,9 +23,9 @@ function MovieDetailsPage() {
             // Remove starting and ending brackets
             similarmovies[0] = similarmovies[0].slice(1);
             similarmovies[similarmovies.length - 1] = similarmovies[similarmovies.length - 1].slice(0, -1);
-            setSimilarShows(similarmovies);
+            setsimilarmovies(similarmovies);
         } else {
-            setSimilarShows([]);
+            setsimilarmovies([]);
         }
     }, [movie]);
 
