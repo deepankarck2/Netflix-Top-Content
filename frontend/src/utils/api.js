@@ -6,18 +6,36 @@ const BASE_URL = 'http://localhost:4000';
 
 
 export function getTop10Movies() {
-   return axios.get(`${BASE_URL}/top10movies`)
-   .catch((err) =>{
-    console.log(err);
-   })
+   return axios.get(`${BASE_URL}/top10movies`);
 }
 
 export function getMovieDetails(id) {
-    return axios.get(`${BASE_URL}/movie/${id}`)
-   .catch( (err) => {
-        console.log(err); 
-   })
+   const moviePromise = axios.get(`${BASE_URL}/movie/${id}`);
+   const gptmovieDetailsPromise = axios.get(`${BASE_URL}/gptmovie/${id}`);
+
+   return Promise.all([moviePromise, gptmovieDetailsPromise])
+       .then(([movieResponse, gptmovieDetailsResponse]) => {
+            const movieData = movieResponse.data;
+            const gptmovieDetailsData = gptmovieDetailsResponse.data;
+            
+            // Combine the data from both responses
+            const combinedData = {
+                  ...movieData,
+                  ...gptmovieDetailsData 
+            };
+
+            return combinedData;
+         })
+         .catch((err) => {
+            console.log(err);
+         });
 }
+
+//     return axios.get(`${BASE_URL}/movie/${id}`)
+//    .catch( (err) => {
+//         console.log(err); 
+//    })
+// }
 
 export function getTop10TvShows() {
    return axios.get(`${BASE_URL}/top10tvshows`)

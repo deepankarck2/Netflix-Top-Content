@@ -20,7 +20,7 @@ function TvShowDetailsPage() {
     }, [id]);
 
     useEffect(() => {
-        if (show) {
+        if (show && show.similarShows) {
             const similarShows = show.similarShows.split(',');
             // Remove trailing and ending brackets
             similarShows[0] = similarShows[0].slice(1);
