@@ -1,4 +1,4 @@
-const  Top10TvShow = require('../model/Top10TvShow')
+const Top10TvShow = require('../model/Top10TvShow')
 const TvShowDetails = require('../model/TvShowDetails')
 const GptTvShowDetails = require('../model/gptTVDetails')
 const RottenTomatosTV = require('../model/RottenTomatosTV')

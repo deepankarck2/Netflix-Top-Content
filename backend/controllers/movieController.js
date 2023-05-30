@@ -1,5 +1,6 @@
 const Top10Movie = require('../model/Top10Movie')
 const MovieDetails = require('../model/MovieDetails')
+const GptMovieDetails = require('../model/GptMovieDetails')
 const RottenTomatosMovie = require('../model/RottenTomatosMovie')
 
 async function fetchtop10MovieController(req,res){
@@ -30,8 +31,16 @@ async function fetchMovieDetailsController(req, res){
     res.json(combinedDetails);
 }
 
+async function fetchMovieGptController(req, res){
+    const id = req.params.id;
+    const movieGptDetails = await GptMovieDetails.findOne({ where: { rank: id }});
+
+    res.json(movieGptDetails);
+}
+
 
 module.exports = {
     fetchtop10MovieController,
     fetchMovieDetailsController,
+    fetchMovieGptController,
 }
