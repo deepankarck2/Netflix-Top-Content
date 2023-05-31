@@ -56,7 +56,7 @@ def rating(s):
     return new.group(0)    
 
 openai.api_key = "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"
-engine = create_engine("mysql://admin:eBvB6C5DsTKhvH3@dashboard.clp7thkncvuh.us-east-2.rds.amazonaws.com:3306/netflix")
+engine = create_engine("mysql://admin:{MYSQL_PASSWORD}@{MYSQL_HOST}:3306/netflix")
 df = pd.read_sql_query('select * from audienceReviewsTv',engine)
 columns = df.columns.to_list()[1:]
 df2 = pd.DataFrame(columns= ["TV","userOpinion","similarShows","typeOfViewer","rating"])
