@@ -79,7 +79,7 @@ def scrape(movie):
 
 path = "chromedriver.exe"
 driver = webdriver.Chrome(path) 
-engine = create_engine("mysql://admin:eBvB6C5DsTKhvH3@dashboard.clp7thkncvuh.us-east-2.rds.amazonaws.com:3306/netflix")
+engine = create_engine("mysql://admin:{MYSQL_PASSWORD}@{MYSQL_HOST}:3306/netflix")
 test = pd.read_sql_query('select Movie from netflixTopMovie10',engine)
 Movie = test['Movie'].to_list()
 
