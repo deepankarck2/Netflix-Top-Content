@@ -29,7 +29,7 @@ def rt_url(title):
 path = "chromedriver.exe"
 driver = webdriver.Chrome(path)
 #change Password to actual password. same with endpoint
-engine = create_engine("mysql://admin:Password@endpoint:3306/netflix")
+engine = create_engine("mysql://admin:{MYSQL_PASSWORD}@{MYSQL_HOST}:3306/netflix")
 test = pd.read_sql_query('select TV from netflixTopTv10',engine)
 tvs = test['TV'].to_list()
 print(tvs)
@@ -60,6 +60,15 @@ driver.quit()
 
 df = pd.DataFrame(nump,columns = ['TV','audience_score','tomatometer'])
 df = df.astype({"TV":'category', "audience_score":'Int64','tomatometer':'Int64'})
+# Read the 'netflixTopTv10' table into a DataFrame
+df_netflix = pd.read_sql('netflixTopTv10', engine)
+# Create a mapping between tv names and ids
+tv_id_mapping = dict(zip(df_netflix['TV'], df_netflix['id']))
+# Map the tv in 'gptTv' DataFrame to their ids
+df['fk_id'] = df['TV'].map(tv_id_mapping )  
+df['fk_id'] = df['fk_id'].astype('int')
+# Start the rank from 1 & Rename the index col:
+df.index = df.index + 1
 df.index.names = ['rank']
+# insert to database
 df.to_sql('rottenTomatoesTv', con=engine, if_exists='replace')
-engine.execute('alter table rottenTomatoesTv add id int primary key auto_increment')
