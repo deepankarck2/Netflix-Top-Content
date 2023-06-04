@@ -29,7 +29,11 @@ def rt_url(title):
 path = "chromedriver.exe"
 driver = webdriver.Chrome(path)
 #change Password to actual password. same with endpoint
+<<<<<<< HEAD
 engine = create_engine("mysql://admin:eBvB6C5DsTKhvH3@dashboard.clp7thkncvuh.us-east-2.rds.amazonaws.com:3306/netflix")
+=======
+engine = create_engine("mysql://admin:{MYSQL_PASSWORD}@{MYSQL_HOST}:3306/netflix")
+>>>>>>> 5f943458d90d5f77c13142b39c82d3ba29c33eb0
 test = pd.read_sql_query('select TV from netflixTopTv10',engine)
 tvs = test['TV'].to_list()
 print(tvs)
