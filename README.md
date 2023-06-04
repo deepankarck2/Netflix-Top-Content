@@ -6,7 +6,6 @@ This project aims to provide a user-friendly platform that allows users to explo
 ![home](/images/image2.png)
 ![home](/images/image3.png)
 ![home](/images/image6.png)
-![home](/images/image7.png)
 ![home](/images/image9.png)
 
 
