@@ -8,8 +8,10 @@ This project aims to provide a user-friendly platform that allows users to explo
 ![home](/images/image6.png)
 ![home](/images/image9.png)
 
-
-
+## Creators
+* **Deepankar Chakraborty -** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
+* **Hyemin Shin -** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
+* **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
 ## Features
 * **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
 
