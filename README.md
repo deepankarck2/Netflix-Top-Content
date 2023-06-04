@@ -9,7 +9,7 @@ This project aims to provide a user-friendly platform that allows users to explo
 ![home](/images/image9.png)
 
 ## Creators
-* **Deepankar Chakraborty -** Established the react web app and helped to maintain the aws database.
+* **[Deepankar Chakraborty](https://www.linkedin.com/in/deepankar-chakraborty-327691101/) -** Established the react web app and helped to maintain the aws database.
 * **Hyemin Shin -** Designed the layout of the react web app using tailwind.
 * **Stephen Williams -** Created programs to scrape data from different websites using selenium.
 ## Features
