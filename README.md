@@ -20,7 +20,7 @@ This project aims to provide a user-friendly platform that allows users to explo
 By utilizing this project, users can stay updated on the most popular Netflix content and make informed decisions on what to watch next, making their Netflix experience even better!
 
 ## Technical Details
-This application is composed of three main technologies:
+This application is composed of a few technologies:
 
 * **Express.js** for backend logic, handling routing, server setup, and database operations.
 * **Sequelize (with MySQL)** for the database layer, managing the data related to the top 10 lists.
