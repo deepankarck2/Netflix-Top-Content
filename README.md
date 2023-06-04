@@ -9,13 +9,13 @@ This project aims to provide a user-friendly platform that allows users to explo
 ![home](/images/image9.png)
 
 ## Creators
-* **Deepankar Chakraborty -** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
-* **Hyemin Shin -** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
-* **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
+* **Deepankar Chakraborty -** Established the react web app and helped to maintain the aws database.
+* **Hyemin Shin -** Designed the layout of the react web app using tailwind.
+* **Stephen Williams -** Created programs to scrape data from different websites using selenium.
 ## Features
 * **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
 
-* **Interactive Details:** We strive to provide our users with more than just a list. By clicking on a specific movie or TV show, users are directed to a new page that presents detailed information about that selection. Details include the movie's title, cast, director, duration, ratings, and a brief overview of the plot, providing a comprehensive understanding of the content.
+* **Interactive Details:** We strive to provide our users with more than just a list. By clicking on a specific movie or TV show, users are directed to a new page that presents detailed information about that selection. Details include the movie's title, cast, director, duration, ratings, and a brief overview of the plot, providing a comprehensive understanding of the content. Lastly we used gpt-3.5-turbo to summarize users opinions, specify the target audience for this content and provide a list of smilar shows/movies.
 
 By utilizing this project, users can stay updated on the most popular Netflix content and make informed decisions on what to watch next, making their Netflix experience even better!
 
@@ -25,7 +25,8 @@ This application is composed of three main technologies:
 * **Express.js** for backend logic, handling routing, server setup, and database operations.
 * **Sequelize (with MySQL)** for the database layer, managing the data related to the top 10 lists.
 * **React** for building the frontend of the application, providing interactive and dynamic user interfaces.
-
+* **Selenium** for scrapping netflix top 10, rottentomatoes and imdb.
+* **ChatGPT** used to generate responses that give user opinions, type of viewer and list of similar shows/movies
 <hr> 
 
 ## Installation Instruction: 
