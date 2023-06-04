@@ -26,7 +26,7 @@ This application is composed of a few technologies:
 * **Sequelize (with MySQL)** for the database layer, managing the data related to the top 10 lists.
 * **React** for building the frontend of the application, providing interactive and dynamic user interfaces.
 * **Selenium** for scrapping [netflix top 10](https://www.netflix.com/tudum/top10/), [rottentomatoes](https://www.rottentomatoes.com/) and [imdb](https://www.imdb.com/).
-* **ChatGPT** used to generate responses that give user opinions, type of viewer and list of similar shows/movies
+* **GPT3.5** used to generate responses that give user opinions, type of viewer and list of similar shows/movies
 <hr> 
 
 ## Installation Instruction: 
