@@ -1,7 +1,7 @@
 # Netflix Top 10 Movies and TV Shows Tracker
 
 This project aims to provide a user-friendly platform that allows users to explore the top 10 Netflix movies and TV shows. The data presented in this platform is obtained through **web scraping, ensuring that the top picks are always up to date.** This project is built using a powerful combination of Express, Sequelize (MySQL), and React.
-![Image Description](/images/image.png)
+![home](/images/image.png)
 
 ## Features
 * **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
