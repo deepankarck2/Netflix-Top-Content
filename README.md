@@ -5,7 +5,6 @@ images/image (1).png
 ![home](/images/image.png)
 ![home](/images/image2.png)
 ![home](/images/image3.png)
-![home](/images/image4.png)
 ![home](/images/image5.png)
 ![home](/images/image6.png)
 ![home](/images/image7.png)
