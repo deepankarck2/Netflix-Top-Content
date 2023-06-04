@@ -2,7 +2,14 @@
 
 This project aims to provide a user-friendly platform that allows users to explore the top 10 Netflix movies and TV shows. The data presented in this platform is obtained through **web scraping, ensuring that the top picks are always up to date.** This project is built using a powerful combination of Express, Sequelize (MySQL), and React.
 images/image (1).png
-
+![home](/images/image.png)
+![home](/images/image2.png)
+![home](/images/image3.png)
+![home](/images/image4.png)
+![home](/images/image5.png)
+![home](/images/image6.png)
+![home](/images/image7.png)
+![home](/images/image8.png)
 ![home](/images/image9.png)
 
 
