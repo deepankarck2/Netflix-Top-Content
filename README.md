@@ -13,9 +13,8 @@ This project aims to provide a user-friendly platform that allows users to explo
 * **[Hyemin Shin](https://www.linkedin.com/in/hyemin-shin/) -** Designed the layout of the react web app using tailwind.
 * **[Stephen Williams](https://www.linkedin.com/in/stephen-williams-7843271a3/) -** Created programs to scrape data from different websites using selenium.
 ## Features
-* **Real-Time Data:** Our automated scraping programs enable us to offer weekly data
 * **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
-
+* **Real-Time Data:** Our automated scraping programs enable us to offer weekly data
 * **Interactive Details:** We strive to provide our users with more than just a list. By clicking on a specific movie or TV show, users are directed to a new page that presents detailed information about that selection. Details include the movie's title, cast, director, duration, ratings, and a brief overview of the plot, providing a comprehensive understanding of the content. Lastly we used gpt-3.5-turbo to summarize users opinions, specify the target audience for this content and provide a list of similar shows/movies.
 
 By utilizing this project, users can stay updated on the most popular Netflix content and make informed decisions on what to watch next, making their Netflix experience even better!
@@ -38,10 +37,10 @@ The sequence for executing the scraping files is as follows.
 4. Run **audienceReviewsMovie.py and audienceReviewsTv.py**. Based on shows/movies in database, collect user written reviews, of at least 80 words, from rotten tomatoes.
 5. Next comes the enjoyable part. Execute **gptTv.py and gptMovie.py** scripts. These files utilize user-written reviews (from a database) as input for gpt-3.5 turbo. The prompt includes requests for user opinions, the target audience for the content, a list of similar shows or movies, and a rating out of 10. The generated responses are then stored in a database and can be accessed through the website
 ## Whats next?
-Improve the scraping process for rtMovieReviews.py and rtTvReviews.py. Sometimes the shows or movies cannot be found by creating a rottentomatoes url. Instead, scrapping rotten tomatoe should be like imdb files where
-the search engine is utilized.
-
-Increase the input of written reviews into gpt. Due to the token limitations of the free version of the open API key, we could only provide 15 user reviews. Maybe we can consider upgrading the API key to accommodate a greater number of reviews for improved results with gpt 3.5. Or use gpt 4
+1. Improve the scraping process for rtMovieReviews.py and rtTvReviews.py. Sometimes the shows or movies cannot be found by creating a rottentomatoes url. Instead, scrapping rotten tomatoes should be like imdb files where the search engine is utilized.
+2. Increase the input of written reviews into gpt. Due to the token limitations of the free version of the open API key, we could only provide 15 user reviews. Maybe we can consider upgrading the API key to accommodate a greater number of reviews for improved results with gpt 3.5. Or use gpt 4
+3. Expand the scrapping to include data from non-english shows and movies on netflix
+4. Somehow use gpt prompts that users can access on our website.
 ## Installation Instruction: 
 1. Install git
 2. Install NodeJS
