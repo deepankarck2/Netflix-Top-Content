@@ -11,7 +11,7 @@ This project aims to provide a user-friendly platform that allows users to explo
 ## Creators
 * **[Deepankar Chakraborty](https://www.linkedin.com/in/deepankar-chakraborty-327691101/) -** Established the react web app and helped to maintain the aws database.
 * **[Hyemin Shin](https://www.linkedin.com/in/hyemin-shin/) -** Designed the layout of the react web app using tailwind.
-* **[Stephen Williams](https://www.linkedin.com/in/stephen-williams-7843271a3/) -** Created programs to scrape data from different websites using selenium.
+* **[Stephen Williams](https://www.linkedin.com/in/stephen-williams-7843271a3/) -** Created scripts to scrape data from different websites using selenium.
 ## Features
 * **Top 10 Movies & TV Shows:** Our platform presents two distinct pages to list the top 10 movies and TV shows, giving our users a quick overview of what's trending on Netflix.
 * **Real-Time Data:** Our automated scraping programs enable us to offer weekly data
