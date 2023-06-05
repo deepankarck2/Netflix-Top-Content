@@ -32,11 +32,11 @@ This application is composed of a few technologies:
 
 ## How to use the scrapping files:
 The sequence for executing the scraping programs is as follows.
-1. First, run both netflixMovie.py and netflixTvshows.py. These files scraps data from netflix top 10 global english shows and movies and inserts them into a database.Every other scrapping depends on these two files
-2. Run rtMovieReviews.py and rtTvReviews.py. Based on what shows/movies are in the database(from step 1), these files search for these media on rottentomatoes and collect their ratings (tomatometer and audience score). Inserts this data into a database
-3. Run imdbMovie.py and imdbTv.py. similar to step 2 but instead of rotten tomatoes, these files scrape various data from imdb. Data include genres,imgurl,summary,and rating.
-4. Run audienceReviewsMovie.py and audienceReviewsTv.py. Based on shows/movies in database, collect user written reviews, of at least 80 words, from rotten tomatoes.
-5. Next comes the enjoyable part. Execute gptTv.py and gptMovie.py scripts. These files utilize user-written reviews (from a database) as input for gpt-3.5 turbo. The prompt includes requests for user opinions, the target audience for the content, a list of similar shows or movies, and a rating out of 10. The generated responses are then stored in a database and can be accessed through the website
+1. First, run both **netflixMovie.py and netflixTvshows.py**. These files scraps data from netflix top 10 global english shows and movies and inserts them into a database.Every other scrapping depends on these two files
+2. Run **rtMovieReviews.py and rtTvReviews.py**. Based on what shows/movies are in the database(from step 1), these files search for these media on rottentomatoes and collect their ratings (tomatometer and audience score). Inserts this data into a database
+3. Run **imdbMovie.py and imdbTv.py**. similar to step 2 but instead of rotten tomatoes, these files scrape various data from imdb. Data include genres,imgurl,summary,and rating.
+4. Run **audienceReviewsMovie.py and audienceReviewsTv.py**. Based on shows/movies in database, collect user written reviews, of at least 80 words, from rotten tomatoes.
+5. Next comes the enjoyable part. Execute **gptTv.py and gptMovie.py** scripts. These files utilize user-written reviews (from a database) as input for gpt-3.5 turbo. The prompt includes requests for user opinions, the target audience for the content, a list of similar shows or movies, and a rating out of 10. The generated responses are then stored in a database and can be accessed through the website
 ## Whats next?
 Improve the scraping process for rtMovieReviews.py and rtTvReviews.py. Sometimes the shows or movies cannot be found by creating a rottentomatoes url. Instead, scrapping rotten tomatoe should be like imdb files where
 the search engine is utilized.
